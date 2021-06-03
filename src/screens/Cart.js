@@ -471,8 +471,6 @@ const Cart = ({ route, navigation, Tag }) => {
                     subscription_days: selectedDays,
                     subscription_end_date: startDate,
                     subscription_start_date: endDate,
-                    //    subscription_end_date:startDate.year.toString() + '-' + (startDate.month.toString().length==1?("0"+startDate.month.toString()):startDate.month.toString())+ '-' + (startDate.day.toString().length==1?("0"+startDate.day.toString()):startDate.day.toString()),
-                    //  subscription_start_date: endDate.year.toString() + '-' + (endDate.month.toString().length==1?("0"+endDate.month.toString()):endDate.month.toString())+ '-' + (endDate.day.toString().length==1?("0"+endDate.day.toString()):endDate.day.toString()),
                     no_of_deliveries:
                       tag == 'Newspaper'
                         ? numberOfPaperWeekdays + numberOfPaperWeekends
@@ -485,33 +483,33 @@ const Cart = ({ route, navigation, Tag }) => {
                     discount: 0,
                     order_total: calculateCartAmount(), //removed +50
                     address_id: route.params.address,
+                    order_date: moment().format('YYYY-MM-DD')
                   })
-                  return
-                  //TODO DEBUG
+                  //return
+                  
                   Axios.post(
                     Config.api_url +
                       'php?action=addSubscription&' +
                       qs.stringify({
-                        user_id: authContext.user,
+                        user_id: authContext.user.user_id,
                         vendor_id: route.params.vendorId,
                         quantity: pquan,
                         subscription_days: selectedDays,
                         subscription_end_date: startDate,
                         subscription_start_date: endDate,
-                        //    subscription_end_date:startDate.year.toString() + '-' + (startDate.month.toString().length==1?("0"+startDate.month.toString()):startDate.month.toString())+ '-' + (startDate.day.toString().length==1?("0"+startDate.day.toString()):startDate.day.toString()),
-                        //  subscription_start_date: endDate.year.toString() + '-' + (endDate.month.toString().length==1?("0"+endDate.month.toString()):endDate.month.toString())+ '-' + (endDate.day.toString().length==1?("0"+endDate.day.toString()):endDate.day.toString()),
                         no_of_deliveries:
-                          tag == 'Paper'
+                          tag == 'Newspaper'
                             ? numberOfPaperWeekdays + numberOfPaperWeekends
                             : numberOfDeliveries,
                         delivery_fee: 50,
-                        product_type: route.params.vendorType,
+                        product_type: route.params.tag,
                         order_gst: 0,
                         product_id: route.params.productId,
                         cartamount: calculateCartAmount(),
                         discount: 0,
-                        order_total: calculateCartAmount() + 50,
-                        address_id: route.params.address.addr_id,
+                        order_total: calculateCartAmount(), //removed +50
+                        address_id: route.params.address,
+                        order_date: moment().format('YYYY-MM-DD')
                       }),
                   ).then(
                     (response) => {
@@ -562,26 +560,25 @@ const Cart = ({ route, navigation, Tag }) => {
                       Config.api_url +
                         'php?action=addSubscription&' +
                         qs.stringify({
-                          user_id: authContext.user,
+                          user_id: authContext.user.user_id,
                           vendor_id: route.params.vendorId,
                           quantity: pquan,
                           subscription_days: selectedDays,
                           subscription_end_date: startDate,
                           subscription_start_date: endDate,
-                          //      subscription_end_date: year.toString() + '-' + month.toString() + '-' + day.toString(),
-                          //    subscription_start_date: endDate.year.toString() + '-' + endDate.month.toString() + '-' + endDate.day.toString(),
                           no_of_deliveries:
-                            tag == 'Paper'
+                            tag == 'Newspaper'
                               ? numberOfPaperWeekdays + numberOfPaperWeekends
                               : numberOfDeliveries,
                           delivery_fee: 50,
-                          product_type: route.params.vendorType,
+                          product_type: route.params.tag,
                           order_gst: 0,
                           product_id: route.params.productId,
                           cartamount: calculateCartAmount(),
                           discount: 0,
-                          order_total: calculateCartAmount() + 50,
-                          //       address_id: route.params.address.addr_id
+                          order_total: calculateCartAmount(), //removed +50
+                          address_id: route.params.address,
+                          order_date: moment().format('YYYY-MM-DD')
                         }),
                     ).then(
                       (response) => {
