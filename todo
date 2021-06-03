@@ -1,0 +1,40 @@
+Intro
+Auth (thisssss) ==>shakey OTP screen tidy
+About+ city props post +async storage
+
+
+
+show saved addresses on that page// Select an address to make it saved address
+ + maps proper + init proper+  region proper+ add address back send props+post then styling
+Milk Vendor => two flat lists
+NewsPaper Vendor => two flat lists again
+submit button fix once and for all
+//axios posting
+
+Checkoutfix+ calendar and stuff
+
+
+When you're done withthat even scrap Vendors
+Then becoming a Vendor 
+    Like 5 pages
+Then payment gateway
+
+
+
+
+/////////////////////////////////////////////
+
+FIXED//- V icon as wellAccordion screen doesn't show selected vendor, class component, fix it p Hamburger menu is not opening the drawer except on the vendor pages, swipe works (A) lease :| (G)
+Completed//- Add app colour to constants somehow -? Completed
+/onit/- Get app version from app.json for navigation drawer 
+- Calendar dates are not perfect. Sometimes end date is before start. Add a check for that (A)
+FIXED//- Hamburger menu is not opening the drawer except on the vendor pages, swipe works (A) 
+Android is ok//- Fonts?
+- Newspapers different costs weekdays and weekends ughh
+- Make signout signout, use DrawerContent.js (G) //On it 
+- In MyProfile.js, the image should use <Image> and not <Avatar> like right now. Sizing and stuff, not working 
+  right with <Image>.
+COMPLETED//- Share App - Completed
+- (PRIORITY) After the end of stack navigator screens, back should not take you to the last navigation drawer screen, on placing order, clear the stack and go back to home
+
+ 

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "196454774082",
+    "firebase_url": "https://welinks.firebaseio.com",
+    "project_id": "welinks",
+    "storage_bucket": "welinks.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196454774082:android:ebd66ee8bd7015848244db",
+        "android_client_info": {
+          "package_name": "com.welinks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "196454774082-75u03bvhqqbbrgrglolbbl4ge7pjmpmj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.welinks",
+            "certificate_hash": "af6842857b7f036cbd2b0aceacdca45093f75523"
+          }
+        },
+        {
+          "client_id": "196454774082-7br3m7m7f4ebc9o2o6cdtjrorlb9mg4k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqPMu6uvPJn4Q4Gt8AsEJ0MDv7peqDSBI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "196454774082-7br3m7m7f4ebc9o2o6cdtjrorlb9mg4k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
