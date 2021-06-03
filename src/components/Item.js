@@ -109,7 +109,6 @@ const Item = ({ name, quantity, price, weekendPrice, imageUrl, tag }) => {
                 </Text>
               </View>
             </View>
-            )
           </View>
         </View>
       </View>

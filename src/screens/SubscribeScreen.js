@@ -160,6 +160,24 @@ const SubscribeScreen = ({ navigation, route }) => {
     // navigation.navigate('Cart')
     console.log('ss', actualUser)
 
+    console.log('cart_logs',{
+      pname,
+      price,
+      pquan,
+      weekendPrice,
+      order,
+      actualUser,
+      imageUrl,
+      usableStartDate,
+      usableEndDate,
+      productId,
+      vendorId,
+      tag,
+      vendorType: route.params.vendorType,
+      address,
+      ...route.params,
+    } );
+
     navigation.navigate('Cart', {
       pname,
       price,

@@ -286,10 +286,11 @@ const Cart = ({ route, navigation, Tag }) => {
   const calculateCartAmount = () => {
     if (tag == 'Milk') {
       cartTotal = price * numberOfDeliveries * order.perDayQuan.number
-    } else if (tag == 'Paper')
+    } else if (tag == 'Newspaper'){
       cartTotal =
         price * numberOfPaperWeekdays * order.perDayQuan.number +
         weekendPrice * numberOfPaperWeekends * order.perDayQuan.number
+    }
 
     return cartTotal
   }
@@ -454,8 +455,8 @@ const Cart = ({ route, navigation, Tag }) => {
                   console.log('TT')
                   setDone(true)
 
-                  const startDate = route.params.startDate
-                  const endDate = route.params.endDate
+                  const startDate = route.params.usableStartDate
+                  const endDate = route.params.usableEndDate
                   console.log('Here ' + JSON.stringify(startDate))
                   console.log('Here ' + JSON.stringify(endDate))
 
@@ -464,7 +465,7 @@ const Cart = ({ route, navigation, Tag }) => {
                   console.log('pop to top')
                   console.log(order.s)
                   console.log({
-                    user_id: authContext.user,
+                    user_id: authContext.user.user_id,
                     vendor_id: route.params.vendorId,
                     quantity: pquan,
                     subscription_days: selectedDays,
@@ -473,17 +474,17 @@ const Cart = ({ route, navigation, Tag }) => {
                     //    subscription_end_date:startDate.year.toString() + '-' + (startDate.month.toString().length==1?("0"+startDate.month.toString()):startDate.month.toString())+ '-' + (startDate.day.toString().length==1?("0"+startDate.day.toString()):startDate.day.toString()),
                     //  subscription_start_date: endDate.year.toString() + '-' + (endDate.month.toString().length==1?("0"+endDate.month.toString()):endDate.month.toString())+ '-' + (endDate.day.toString().length==1?("0"+endDate.day.toString()):endDate.day.toString()),
                     no_of_deliveries:
-                      tag == 'Paper'
+                      tag == 'Newspaper'
                         ? numberOfPaperWeekdays + numberOfPaperWeekends
                         : numberOfDeliveries,
                     delivery_fee: 50,
-                    product_type: route.params.vendorType,
+                    product_type: route.params.tag,
                     order_gst: 0,
                     product_id: route.params.productId,
                     cartamount: calculateCartAmount(),
                     discount: 0,
-                    order_total: calculateCartAmount() + 50,
-                    address_id: route.params.address.addr_id,
+                    order_total: calculateCartAmount(), //removed +50
+                    address_id: route.params.address,
                   })
                   return
                   //TODO DEBUG

@@ -122,6 +122,8 @@ const ProductVendors = ({route,navigation}) => {
                         <Vendor name={vendorName} brands={brandsString} stars={item.avg_ratings} reviews={item.reviews_number} imageUrl={imageUrl}
                             onSelected={() => {
 
+                               // console.log('tag @ ProductVendors', tag)
+
                                 navigation.navigate('ProductVendor', {
                                     tag,
                                     address,

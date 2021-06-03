@@ -7,6 +7,8 @@ import { dimen } from '../Constants'
 
 const ProductsList = ({ navigation, data, vendorID, address, tag }) => {
   console.log('dat', JSON.stringify(data))
+  console.log('vendor_id @ ProductsList', vendorID);
+  console.log('address @ ProductsList', address);
   return (
     <View style={{ padding: 1 }}>
       <FlatList
@@ -35,7 +37,7 @@ const ProductsList = ({ navigation, data, vendorID, address, tag }) => {
                 console.log(JSON.stringify(item))
 
                 navigation.navigate('SubscribeScreen', {
-                  tag: 'Milk',
+                  tag: tag,
                   pname: prodName,
                   pquan: prodQuan,
                   prate: prodRate,

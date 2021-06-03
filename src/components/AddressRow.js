@@ -58,6 +58,7 @@ export default HomeAddress = ({
     navigation.navigate(route.params.next, {
       address: itemnow,
       actualUser: route.params.actualUser,
+      tag: route.params.tag,
       ...routeparams,
     })
   }

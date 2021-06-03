@@ -32,7 +32,9 @@ const ProductVendor = ({ route, navigation }) => {
   const [activeSections, setActiveSections] = useState([])
   const scrollView = useRef()
 
-  const vendorData = route.params
+  const [vendorData, setVendorData] = useState(route.params);
+
+  console.log("@vendorData logged", vendorData);
 
   useFocusEffect(
     React.useCallback(() => {
@@ -50,6 +52,8 @@ const ProductVendor = ({ route, navigation }) => {
 
   const fetchVendor = async (t) => {
     if (t < 0) return
+    
+    console.log("vendor_id @ Product_vendor", vendorData.vendorId);
 
     Axios.get(
       Config.api_url +
@@ -87,6 +91,8 @@ const ProductVendor = ({ route, navigation }) => {
   }, [])
 
   const renderBrands = (item) => {
+
+    //TODO check
     return (
       <View style={{ flex: 0 }}>
         <Image
@@ -100,6 +106,9 @@ const ProductVendor = ({ route, navigation }) => {
   const renderContent = (section, _, isactive) => {
     console.log(section[Object.keys(section)[0]])
 
+    console.log("@ render@ProdVendor", vendorData.vendorId);
+
+
     return (
       <Animatable.View
         duration={400}
@@ -107,10 +116,10 @@ const ProductVendor = ({ route, navigation }) => {
         transition="backgroundColor"
       >
         <ProductsList
-          vendorID={vendorData.vendorID}
+          vendorID={vendorData.vendorId}
           navigation={navigation}
           data={section[Object.keys(section)[0]]}
-          address={vendorData.vendorAddress}
+          address={vendorData.address.addr_id}
           tag={vendorData.tag}
         />
       </Animatable.View>
