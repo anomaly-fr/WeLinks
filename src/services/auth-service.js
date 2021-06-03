@@ -27,7 +27,7 @@ export const AuthContext = React.createContext({
 export default function AuthProvider({ children }) {
   const [user, setUser] = useState(AuthConstants.loading)
   const [vendor, setVendor] = useState(AuthConstants.loading)
-  const debug = false
+  const debug = true
   const debugNumber = '9535311386'
 
   const checkUserAccounts = () => {
