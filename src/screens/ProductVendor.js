@@ -97,7 +97,7 @@ const ProductVendor = ({ route, navigation }) => {
       <View style={{ flex: 0 }}>
         <Image
           style={{ ...Styles.horizontalImage }}
-          source={{ uri: item.brand_image_url }}
+          source={{ uri: vendorData.tag == "Milk" ?  item.brand_img_url :item.brand_image_url  }}
         />
       </View>
     )
