@@ -286,7 +286,7 @@ const Cart = ({ route, navigation, Tag }) => {
   const calculateCartAmount = () => {
     if (tag == 'Milk') {
       cartTotal = price * numberOfDeliveries * order.perDayQuan.number
-    } else if (tag == 'Newspaper'){
+    } else if (tag == 'Newspaper') {
       cartTotal =
         price * numberOfPaperWeekdays * order.perDayQuan.number +
         weekendPrice * numberOfPaperWeekends * order.perDayQuan.number
@@ -483,10 +483,10 @@ const Cart = ({ route, navigation, Tag }) => {
                     discount: 0,
                     order_total: calculateCartAmount(), //removed +50
                     address_id: route.params.address,
-                    order_date: moment().format('YYYY-MM-DD')
+                    order_date: moment().format('YYYY-MM-DD'),
                   })
                   //return
-                  
+
                   Axios.post(
                     Config.api_url +
                       'php?action=addSubscription&' +
@@ -509,7 +509,7 @@ const Cart = ({ route, navigation, Tag }) => {
                         discount: 0,
                         order_total: calculateCartAmount(), //removed +50
                         address_id: route.params.address,
-                        order_date: moment().format('YYYY-MM-DD')
+                        order_date: moment().format('YYYY-MM-DD'),
                       }),
                   ).then(
                     (response) => {
@@ -578,7 +578,7 @@ const Cart = ({ route, navigation, Tag }) => {
                           discount: 0,
                           order_total: calculateCartAmount(), //removed +50
                           address_id: route.params.address,
-                          order_date: moment().format('YYYY-MM-DD')
+                          order_date: moment().format('YYYY-MM-DD'),
                         }),
                     ).then(
                       (response) => {
@@ -667,7 +667,7 @@ const Cart = ({ route, navigation, Tag }) => {
                 }}
               >
                 <Text style={{ color: 'white', fontSize: 12 }}>
-                  {'Pay Using WeLinks Wallet (Bal. ₹' +
+                  {'Pay Using We Link Wallet (Bal. ₹' +
                     authContext.user.wallet_balance +
                     ')'}
                 </Text>

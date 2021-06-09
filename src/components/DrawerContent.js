@@ -296,7 +296,6 @@ const DrawerContent = (props) => {
         >
           <Drawer.Section>
             <View style={styles.header}>
-              {/* <Text style={{margin: '10%',color: 'white',fontSize: 30, fontWeight: 'bold'}}>WeLinks</Text> */}
               <View style={{ marginTop: '5%', margin: '5%' }}>
                 <Image
                   source={
@@ -389,7 +388,7 @@ const DrawerContent = (props) => {
 
             <Drawer.Item
               icon="wallet-outline"
-              label="WeLinks Wallet"
+              label="We Link Wallet"
               onPress={() => {
                 props.navigation.navigate('WalletStack', {
                   actualUser: actualUser,

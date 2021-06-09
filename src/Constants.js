@@ -76,7 +76,7 @@ export const Constants = {
   city: 'CITY',
   selectedAddress: 'selectedAddress',
   shareMessage:
-    'Hey! Check out WeLinks, the one stop destination for your daily needs! https://www.google.com\nUse my referral code!',
+    'Hey! Check out We Link, the one stop destination for your daily needs! https://www.google.com\nUse my referral code!',
   veFirstTime: 'firstTime',
   veInProgress: 'inprogress',
   veRejected: 'rejected',

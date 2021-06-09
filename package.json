@@ -85,6 +85,6 @@
     "react-native/hermes-engine": "0.5.2-rc1"
   },
   "private": true,
-  "name": "WeLinks",
+  "name": "We Link",
   "version": "1.0.0"
 }
