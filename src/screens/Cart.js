@@ -613,7 +613,7 @@ const Cart = ({ route, navigation, Tag }) => {
                         // })
                         Axios.post(
                           `https://api.dev.we-link.in/user_app.php?action=orderByWallet&user_id=${
-                            authContext.user
+                            authContext.user.user_id
                           }&order_id=${response.data.subscriptionID.toString()}&amount=${(
                             calculateCartAmount() + 50
                           ).toString()}`,
@@ -628,7 +628,7 @@ const Cart = ({ route, navigation, Tag }) => {
                               sendNotif(
                                 'Hey',
                                 'Your order has been successfully placed',
-                                'user' + authContext.user,
+                                'user' + authContext.user.user_id,
                                 notification_identifiers.user_milk_subscriptions,
                               )
                               sendNotif(
